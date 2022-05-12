@@ -7,38 +7,68 @@
    --color-list-odd: #f2f2f2;
 }
    
-
-/* Imágenes:
-logo: https://www.last.fm/static/images/logo_static_mob.0798d7258e3d.png
+/*
+ Imágenes{
+logo https://www.last.fm/static/images/logo_static_mob.0798d7258e3d.png
 rock: https://lastfm.freetls.fastly.net/i/u/avatar300s/366962d5733a4aee8bee4a136c239d47.jpg
-hip-hop: https://lastfm.freetls.fastly.net/i/u/avatar300s/51810a59cb17449bb2d6b8b62d63ce78.jpg
+hip-hop; https://lastfm.freetls.fastly.net/i/u/avatar300s/51810a59cb17449bb2d6b8b62d63ce78.jpg
 indie:https://lastfm.freetls.fastly.net/i/u/avatar300s/c825233e09af4641a5ce7b6ece883aae.jpg
 jazz:https://lastfm.freetls.fastly.net/i/u/avatar300s/c0a9af93c8c843afb43cd6dc24b0bbf3.jpg
 reggae: https://lastfm.freetls.fastly.net/i/u/avatar300s/94428d295a60403e9327cbfb86e2fbf6.jpg
-*/
+} */
+/*
+ Filtros{
 
-/* Filtros:
-
-rock:   sepia(90%);
+rock; sepia(90%);
 hip-hop:contrast(200%);
 indie:  grayscale(50%);
 jazz:   hue-rotate(90deg);
 reggae: saturate(10%);
 
-*/
+}*/
 
 /* Fuente:
     font-family:Open Sans,Lucida Grande,Helvetica Neue,Helvetica,Arial,Sans-serif;
 
 */
 
-/* Utiliza  la propiedad counter-increment: step-counter; para pintar el número de la canción
- */
- 
+
+
 /*Header (L)*/
+header {
+    background-color: black;
+    padding: 0.5em;
+    height: auto;
+    display: flex;
+    justify-content:center;   
+}
 
 /* 1st Nav by genre (M)*/
 
 /*2nd Nav by others groups (L)*/
+.menuName {
+    text-align:center;
+}
+.menuName>li {
+    display:inline-block;
+    margin: 2em;
+}
+.menuName >li>a{
+    text-decoration: none;
+    color:rgb(104, 41, 41)
+}
+.menuName >li>a:hover {
+    color: rgb(242, 0, 255);
+}
 
 /*Main (J)*/
+
+ /* Utiliza  la propiedad counter-increment: step-counter; para pintar el número de la canción
+ */
+
+/*roboto condensed bold;Sourcepro-Bold*/
+  
+
+/*colors (43,226,98);(174,43,226)
+  
+  
