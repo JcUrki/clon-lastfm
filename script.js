@@ -1,69 +1,31 @@
-class Song {
-    constructor(){
+// J
+fetch("music.json") //Carga en memoria
+.then(res=>res.json()) //Especifica el formato en que se desea obtener la información, que es igual a hace un JSON.parse()
+.then(data => musicList(data)) //Mostrar la información
+
+const body= document.querySelector("body");
+const musicName= [];
+
+
+
+function musicList(data){
+    for (let i = 0; i < data.length; i++) {
+        // ({name:data.name}.{})
+        
+        //Título
+        //lista que este relacionada con
     }
 
-    setItemLi(){
-    }
-    setItemGroupName(group,url){
-    }
-    setItemSongTitle(title){
-    }
-    setListeners(listeners){
-    }
-    getNewElement(group,url,title,listeners){
-    }
-
-}
-initSongArray = async () => {
-    const {tracks} = await getTopTracks();
-
-    const arrayTracks = tracks.track.map(async (track) =>{
-       const info = await  getInfoTrack(track.name,track.artist.name)
-    //  console.log(info.track.toptags.tag)
-       track.genres = info.track.toptags.tag.map(e => e.name);
-       console.log(track);
-       return track;
-    })
-
-    const fullTracks = await Promise.all(arrayTracks)
-
-    return fullTracks;
-}
-const loadSongs = (tracks)=>{
-    // const ul = document.querySelector('ul');
-    // tracks.forEach(track => {
-    //     const li = document.createElement('li');
-    //     li.innerHTML=
-    //     `<span>${track.name}</span>
-    //     <a class="group-name" title="Play song" href=${track.url} target=_blank>play</a>
-    //     <span>${track.listeners}</span><span>${JSON.stringify(track.genres)}</span>`
-
-    //     ul.appendChild(li);
-    document.write(JSON.stringify(tracks))
-
-    // });
-
-}
-const loadOverview = () =>{
+    
+   
 }
 
-const loadTenListened = ()=>{
-
-}
-
-const loadBiggest = (e)=>{
-
-}
-
-const init = async ()=>{
-
-    // const {tracks} = await getTopTracks();
-    const tracks = await initSongArray();
-    console.log(tracks);
-    loadSongs(tracks);
-    // console.log(tracks.track);
-
-    }
-
-
-window.onload = init;
+ /*const linkList=document.querySelectorAll("a");
+    linkList[1].setAttribute('href', "data.name.");
+     linkList[2].setAttribute('href', "");
+    linkList[3].setAttribute('href', "");
+    linkList[4].setAttribute('href', "");
+    linkList[5].setAttribute('href', "");
+    linkList[6].setAttribute('href', "");
+    linkList[7].setAttribute('href', "");
+    linkList[8].setAttribute('href', "");*/

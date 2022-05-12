@@ -1,11 +1,12 @@
-/* Colores:
-   --color-primary:  #222
+/*---   Colores ---*/
+:root{
+    --color-primary:  #222
    --color-secondary: rgba(110, 69, 51, 1);
    --color-focus-menu: #B90000;
    --color-background: #fff;
    --color-list-odd: #f2f2f2;
-
-*/
+}
+   
 
 /* Imágenes:
 logo: https://www.last.fm/static/images/logo_static_mob.0798d7258e3d.png
@@ -33,4 +34,11 @@ reggae: saturate(10%);
 
 /* Utiliza  la propiedad counter-increment: step-counter; para pintar el número de la canción
  */
+ 
+/*Header (L)*/
 
+/* 1st Nav by genre (M)*/
+
+/*2nd Nav by others groups (L)*/
+
+/*Main (J)*/
