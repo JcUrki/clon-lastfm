@@ -92,7 +92,7 @@ header {
    display: flex;
    justify-content: center;
    align-items: center;
-  
+ 
 }
 #rock{
    filter: sepia(90%) ;
