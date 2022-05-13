@@ -1,82 +1,36 @@
 /* Colores:
-   --color-primary:  #222
-   --color-secondary: rgba(110, 69, 51, 1);
-   --color-focus-menu: #B90000;
-   --color-background: #fff;
-   --color-list-odd: #f2f2f2;
-
+    --color-primary:  #222
+    --color-secondary: rgba(110, 69, 51, 1);
+    --color-focus-menu: #B90000;
+    --color-background: #fff;
+    --color-list-odd: #f2f2f2;
 */
 
-/* Imágenes:
-logo: https://www.last.fm/static/images/logo_static_mob.0798d7258e3d.png
-rock: https://lastfm.freetls.fastly.net/i/u/avatar300s/366962d5733a4aee8bee4a136c239d47.jpg
-hip-hop: https://lastfm.freetls.fastly.net/i/u/avatar300s/51810a59cb17449bb2d6b8b62d63ce78.jpg
-indie:https://lastfm.freetls.fastly.net/i/u/avatar300s/c825233e09af4641a5ce7b6ece883aae.jpg
-jazz:https://lastfm.freetls.fastly.net/i/u/avatar300s/c0a9af93c8c843afb43cd6dc24b0bbf3.jpg
-reggae: https://lastfm.freetls.fastly.net/i/u/avatar300s/94428d295a60403e9327cbfb86e2fbf6.jpg
+/*Imágenes{
+    logo https://www.last.fm/static/images/logo_static_mob.0798d7258e3d.png
+    rock: https://lastfm.freetls.fastly.net/i/u/avatar300s/366962d5733a4aee8bee4a136c239d47.jpg
+    hip-hop; https://lastfm.freetls.fastly.net/i/u/avatar300s/51810a59cb17449bb2d6b8b62d63ce78.jpg
+    indie:https://lastfm.freetls.fastly.net/i/u/avatar300s/c825233e09af4641a5ce7b6ece883aae.jpg
+    jazz:https://lastfm.freetls.fastly.net/i/u/avatar300s/c0a9af93c8c843afb43cd6dc24b0bbf3.jpg
+    reggae: https://lastfm.freetls.fastly.net/i/u/avatar300s/94428d295a60403e9327cbfb86e2fbf6.jpg
+} 
 */
 
-/* Filtros:
-
-rock:   sepia(90%);
-hip-hop:contrast(200%);
-indie:  grayscale(50%);
-jazz:   hue-rotate(90deg);
-reggae: saturate(10%);
-
-*/
+/* Filtros{
+    rock; sepia(90%);
+    hip-hop:contrast(200%);
+    indie:  grayscale(50%);
+    jazz:   hue-rotate(90deg);
+    reggae: saturate(10%);
+}*/
 
 /* Fuente:
     font-family:Open Sans,Lucida Grande,Helvetica Neue,Helvetica,Arial,Sans-serif;
-
 */
 
-/* Utiliza  la propiedad counter-increment: step-counter; para pintar el número de la canción
+ /* Utiliza  la propiedad counter-increment: step-counter; para pintar el número de la canción
  */
 
-
-
-#genre .genero{
-     display: grid;
-     grid-template-rows: repeat(3,5em);
-     grid-template-columns: repeat(2,5em);
-     justify-content: center;
-     list-style: none;
-     column-gap:1em;
-     row-gap: 1em;
-
-}
-.genero>li>img{
-    width: 5em;
-    height: 5em;
-    
-
-}
-.genero>li>a{
-    text-decoration: none;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    line-height: 
-    
-   
-}
-#rock{
-    filter: sepia(90%) ;
-}
-#hip-hop{
-    filter: contrast(200%) ;
-}
-#indie{
-    filter: grayscale(50%);
-}
-#jazz{
-    filter: hue-rotate(90deg);    
-}
-#reggae{
-    filter: saturate(10%);
-
-}
 
 /* #rock{ 
      background-image: url("https://lastfm.freetls.fastly.net/i/u/avatar300s/366962d5733a4aee8bee4a136c239d47.jpg"); 
@@ -89,3 +43,96 @@ reggae: saturate(10%);
      margin-top: 3em; } 
  .rockLink{ display: flex; justify-content: center; } 
 
+/*---   Colores ---*/
+:root{
+    --color-background: rgb(251, 246, 233);
+    --color-header: rgb(100, 183, 103);
+    --color-text-nav: rgb(104, 41, 41);
+    --color-focus-menu: #6ee093;
+    --color-list-odd: #ffffff;
+    --color-primary: rgb(112, 184, 214);
+    --color-secondary: rgb(0, 179, 255);   
+}
+
+body{
+    background-color: var(--color-background);
+    margin: auto;
+    padding: auto;
+}
+
+/*Header (L)*/
+header {
+    background-color: var(--color-header);
+    padding: 0.5em;
+    height: auto;
+    display: flex;
+    justify-content:center;   
+}
+
+/* 1st Nav by genre (M)*/
+
+#genre .genero{
+    display: grid;
+    grid-template-rows: repeat(3,5em);
+    grid-template-columns: repeat(2,5em);
+    justify-content: center;
+    list-style: none;
+    column-gap:1em;
+    row-gap: 1em;
+
+}
+.genero>li>img{
+   width: 5em;
+   height: 5em;
+   
+
+}
+.genero>li>a{
+   text-decoration: none;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+  
+}
+#rock{
+   filter: sepia(90%) ;
+}
+#hip-hop{
+   filter: contrast(200%) ;
+}
+#indie{
+   filter: grayscale(50%);
+}
+#jazz{
+   filter: hue-rotate(90deg);    
+}
+#reggae{
+   filter: saturate(10%);
+
+}
+
+
+
+/*2nd Nav by others groups (L)*/
+.menuName {
+    text-align:center;
+}
+.menuName>li {
+    display:inline-block;
+    list-style: none;
+    margin: 2em;
+}
+.menuName >li>a {
+    text-decoration: none;
+    color: var(--color-text-nav);
+}
+.menuName >li>a:hover {
+    color: var(--color-focus-menu);
+}
+
+/*Main (J)*/
+
+/*roboto condensed bold;Sourcepro-Bold*/
+/*colors (43,226,98);(174,43,226)*/
+  
+  
