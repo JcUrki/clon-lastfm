@@ -34,3 +34,58 @@ reggae: saturate(10%);
 /* Utiliza  la propiedad counter-increment: step-counter; para pintar el número de la canción
  */
 
+
+
+#genre .genero{
+     display: grid;
+     grid-template-rows: repeat(3,5em);
+     grid-template-columns: repeat(2,5em);
+     justify-content: center;
+     list-style: none;
+     column-gap:1em;
+     row-gap: 1em;
+
+}
+.genero>li>img{
+    width: 5em;
+    height: 5em;
+    
+
+}
+.genero>li>a{
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    line-height: 
+    
+   
+}
+#rock{
+    filter: sepia(90%) ;
+}
+#hip-hop{
+    filter: contrast(200%) ;
+}
+#indie{
+    filter: grayscale(50%);
+}
+#jazz{
+    filter: hue-rotate(90deg);    
+}
+#reggae{
+    filter: saturate(10%);
+
+}
+
+/* #rock{ 
+     background-image: url("https://lastfm.freetls.fastly.net/i/u/avatar300s/366962d5733a4aee8bee4a136c239d47.jpg"); 
+     width: 20em; 
+     height: 20em; 
+     background-position: center; 
+     background-repeat: no-repeat; 
+     background-size:cover; 
+     position: relative;
+     margin-top: 3em; } 
+ .rockLink{ display: flex; justify-content: center; } 
+

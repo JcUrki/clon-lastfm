@@ -1,4 +1,4 @@
-class Song {
+/*class Song {
     constructor(){
     }
 
@@ -67,3 +67,6 @@ const init = async ()=>{
 
 
 window.onload = init;
+*/
+
+
