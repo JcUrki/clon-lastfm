@@ -1,15 +1,15 @@
 // J
-const main= document.querySelector("main");
-const titleList= document.createElement("h2");
-const numberedList= document.createElement("ul");
+const main= document.querySelector("container music list");
+const genero= document.createElement("");
+const name= document.createElement("");
+const listeners= document.createElement("");
 main.appendChild(titleList);
 main.appendChild(numberedList);
 
 fetch("music.json") //Carga en memoria
 .then(res=>res.json()) //Especifica el formato en que se desea obtener la información, que es igual a hace un JSON.parse()
 .then(data => console.log(data)) //Mostrar la información
-
-const linksLists= document.querySelectorAll("a").addEventListener("click", musicList());
+const l= document.querySelectorAll("a").addEventListener("click", musicList());
 numberedList.appendChild(linksLists);
 
 window.addEventListener("loaded", musicList);
