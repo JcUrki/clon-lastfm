@@ -44,7 +44,7 @@
  .rockLink{ display: flex; justify-content: center; } 
 
 /*---   Colores ---*/
-:root{
+:root {
     --color-background: rgb(251, 246, 233);
     --color-header: rgb(100, 183, 103);
     --color-text-nav: rgb(104, 41, 41);
@@ -54,10 +54,14 @@
     --color-secondary: rgb(0, 179, 255);   
 }
 
-body{
+body {
+    font-family: Open Sans, Lucida Grande, Helvetica Neue, Helvetica, Arial, Sans-serif;
     background-color: var(--color-background);
     margin: auto;
     padding: auto;
+}
+a{
+    text-decoration: none;
 }
 
 /*Header (L)*/
@@ -70,8 +74,7 @@ header {
 }
 
 /* 1st Nav by genre (M)*/
-
-#genre .genero{
+#genre .genero {
     display: grid;
     grid-template-rows: repeat(3,5em);
     grid-template-columns: repeat(2,5em);
@@ -79,36 +82,43 @@ header {
     list-style: none;
     column-gap:1em;
     row-gap: 1em;
-
 }
-.genero>li>img{
+
+.genero>li>img {
    width: 5em;
    height: 5em;
-   
+}
 
+.genero>li>a {
+    position: absolute;
+    color: white;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
-.genero>li>a{
-   text-decoration: none;
-   display: flex;
-   justify-content: center;
-   align-items: center;
- 
+
+.genero>li>a:hover {
+    color: var(--color-focus-menu);
+    text-decoration: underline var(--color-focus-menu) 0.1em;
 }
-#rock{
-   filter: sepia(90%) ;
+#rock {
+   filter: sepia(90%);
 }
-#hip-hop{
+
+#hip-hop {
    filter: contrast(200%) ;
 }
-#indie{
+
+#indie {
    filter: grayscale(50%);
 }
-#jazz{
+
+#jazz {
    filter: hue-rotate(90deg);    
 }
-#reggae{
-   filter: saturate(10%);
 
+#reggae {
+   filter: saturate(10%);
 }
 
 
@@ -117,16 +127,18 @@ header {
 .menuName {
     text-align:center;
 }
+
 .menuName>li {
     display:inline-block;
     list-style: none;
     margin: 2em;
 }
-.menuName >li>a {
-    text-decoration: none;
+
+.menuName>li>a {
     color: var(--color-text-nav);
 }
-.menuName >li>a:hover {
+
+.menuName>li>a:hover {
     color: var(--color-focus-menu);
 }
 

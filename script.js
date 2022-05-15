@@ -16,11 +16,11 @@ function musicList(songs){
     songs.forEach(song => { 
         const list1= document.createElement("tr");
         list1.innerHTML += `
-        <td>${song.artist.name}</td> 
-        <td>${song.name}</td> 
+        <td><a href= "${song.artist.url}">${song.artist.name}</a></td>
+        <td><a href="${song.url}" target="_blank">${song.name}</a></td> 
         <td>${song.listeners} Listeners</td>    
         `;
         listContainer.appendChild(list1);
     });  
 }
-//window.onload = musicList();
+window.onload = musicList();
