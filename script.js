@@ -2,24 +2,51 @@
 const main= document.querySelector("main");
 const listContainer= document.createElement("section");
 const titleList= document.createElement("h3");
-listContainer.appendChild(titleList);
-let=music
+const linksLists= document.querySelectorAll("a");
+main.appendChild(titleList);
+main.appendChild(listContainer);
+let music;
 
-    fetch("music.json") //Carga en memoria
-    .then(res => res.json()) //Estdecifica el formato en que se desea obtener la información, que es igual a hacer un JSON.tdarse()
-    .then(data => musicList(data)) //Mostrar la información obtenida
-    .then(data =>music(data))//Mostrar lista de rock
+fetch("music.json") //Carga en memoria
+.then(res => res.json()) //Estdecifica el formato en que se desea obtener la información, que es igual a hacer un JSON.tdarse()
+.then(data => {
+    musicList(data,"Overview");
+    music= data;
+}) //Mostrar la información obtenida
 
-//const linksLists= document.querySelectorAll("a");
-
-function musicList(songs){
+function musicList(songs, title){
+    listContainer.innerHTML= "";
+    titleList.innerText= title;
     songs.forEach(song => { 
         const list1= document.createElement("tr");
         list1.innerHTML += `
-        <td>${song.artist.name}</td> 
-        <td>${song.name}</td> 
-        <td>${song.listeners} Listeners</td>    
+        <td class="nameArtist"><a href= "${song.artist.url}">${song.artist.name}</a></td>
+        <td><a href="${song.url}" target="_blank">${song.name}</a></td> 
+        <td class= "listeners">${song.listeners} Listeners</td>    
         `;
         listContainer.appendChild(list1);
     });  
 }
+//window.onload = ()=> musicList(music);
+
+//US 6
+const listIndie = linksLists[3];
+listIndie.onclick= (e)=>{ 
+    e.preventDefault(); //Reset el evento anterior
+    indie(music, e.currentTarget.textContent);
+};
+function indie(songs, title){
+    let list3= songs.filter(song => song.genres.includes("indie"));
+    musicList(list3, title);  
+};
+
+//US 2
+const listRock = linksLists[2];
+listRock.onclick= (e)=>{ 
+    e.preventDefault(); //Reset el evento anterior
+    (music, e.currentTarget.textContent);
+};
+function rock(songs, title){
+    let list3rock= songs.filter(song => song.genres.includes("rock"));
+    musicList(list2, title);  
+};
