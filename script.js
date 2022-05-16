@@ -2,13 +2,13 @@
 const main= document.querySelector("main");
 const listContainer= document.createElement("section");
 const titleList= document.createElement("h3");
-main.appendChild(listContainer);
 listContainer.appendChild(titleList);
-
+let=music
 
     fetch("music.json") //Carga en memoria
     .then(res => res.json()) //Estdecifica el formato en que se desea obtener la información, que es igual a hacer un JSON.tdarse()
     .then(data => musicList(data)) //Mostrar la información obtenida
+    .then(data =>music(data))//Mostrar lista de rock
 
 //const linksLists= document.querySelectorAll("a");
 
@@ -23,4 +23,3 @@ function musicList(songs){
         listContainer.appendChild(list1);
     });  
 }
-//window.onload = musicList();
