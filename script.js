@@ -7,6 +7,7 @@ main.appendChild(titleList);
 main.appendChild(listContainer);
 let music;
 
+//U
 fetch("music.json") //Carga en memoria
 .then(res => res.json()) //Estdecifica el formato en que se desea obtener la información, que es igual a hacer un JSON.tdarse()
 .then(data => {
@@ -41,3 +42,14 @@ function indie(songs, title){
 };
 
 //US 2
+const listOverview = linksLists[6];
+listOverview.onclick= (e)=>{ 
+    e.preventDefault(); //Reset el evento anterior
+    overview(music, e.currentTarget.textContent);
+};
+function overview(songs, title){
+    let list6= songs;
+    musicList(list6, title);  
+};
+
+
