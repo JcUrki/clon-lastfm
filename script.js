@@ -19,13 +19,13 @@ function musicList(songs, title){
     listContainer.innerHTML= "";
     titleList.innerText= title;
     songs.forEach(song => { 
-        const list1= document.createElement("tr");
-        list1.innerHTML += `
+        const list= document.createElement("tr");
+        list.innerHTML += `
         <td class="nameArtist"><a href= "${song.artist.url}">${song.artist.name}</a></td>
         <td><a href="${song.url}" target="_blank">${song.name}</a></td> 
         <td class= "listeners">${song.listeners} Listeners</td>    
         `;
-        listContainer.appendChild(list1);
+        listContainer.appendChild(list);
     });  
 }
 //window.onload = ()=> musicList(music);
@@ -62,5 +62,49 @@ function top10(songs, title){
 
     
     let list7= songs;
+    musicList(list7, title);  
+};
+
+//L
+
+//US 4
+const listRock = linksLists[1];
+listRock.onclick= (e)=>{ 
+    e.preventDefault(); //Reset el evento anterior
+    rock(music, e.currentTarget.textContent);
+};
+function rock(songs, title){
+    let list1= songs.filter(song => song.genres.includes("rock"));
+    musicList(list1, title);  
+};
+
+const listHipHop= linksLists[2];
+listHipHop.onclick= (e)=>{ 
+    e.preventDefault(); //Reset el evento anterior
+    HipHop(music, e.currentTarget.textContent);
+};
+function HipHop (songs, title){
+    let list2= songs.filter(song => song.genres.includes("Hip-Hop"));
+    musicList(list2, title);  
+};
+
+const listReggae= linksLists[5];
+listReggae.onclick= (e)=>{ 
+    e.preventDefault(); //Reset el evento anterior
+    reggae(music, e.currentTarget.textContent);
+};
+function reggae(songs, title){
+    let list5= songs.filter(song => song.genres.includes("reggae"));
+    musicList(list5, title);  
+};
+
+/*US 7*/
+const listJazz= linksLists[7];
+listJazz.onclick= (e)=>{ 
+    e.preventDefault(); //Reset el evento anterior
+    jazz(music, e.currentTarget.textContent);
+};
+function jazz(songs, title){
+    let list7= songs.filter(song => song.genres.includes("jazz"));
     musicList(list7, title);  
 };
