@@ -60,10 +60,14 @@ listTop10.onclick= (e)=>{
     top10(music, e.currentTarget.textContent);
 };
 function top10(songs, title){
-
-    
-    let list7= songs;
+    songs.sort((a, b)=> {
+        let listenersA = parseInt(a.listeners);
+        let listenersB = parseInt(b.listeners);
+        return listenersB - listenersA;
+   })
+    let list7= songs.slice(0,10);
     musicList(list7, title);  
+    list7(20);
 };
 
 //L
@@ -78,6 +82,7 @@ function rock(songs, title){
     musicList(list1, title);  
 };
 
+/* US 4*/
 //US 5
 const listHipHop= linksLists[2];
 listHipHop.onclick= (e)=>{
@@ -89,6 +94,7 @@ function hipHop(songs,title){
     musicList(list2,title);
 }
 
+/* US 5*/
 //US 8
 const listReggae= linksLists[5];
 console.log(listReggae, 'listReggae')
@@ -107,7 +113,18 @@ listJazz.onclick= (e)=>{
     e.preventDefault();
     jazz(music, e.currentTarget.textContent);
 };
-function jazz(songs,title){
-    let list4= songs.filter(song=> song.genres.includes("jazz"));
-    musicList(list4,title);
-}
+function jazz(songs, title){
+    let list4= songs.filter(song => song.genres.includes("jazz"));
+    musicList(list4, title);  
+};
+    
+const listradiohead = linksLists[8];
+listradiohead.onclick=(e)=>{
+    e.preventDefault();
+    radiohead(music, e.currentTarget.textContent);  
+};
+function radiohead(songs, title){
+    let list8= songs.filter(song => song.genres.includes("radiohead"));
+    console.log(list8, "list")
+    musicList(list8, title);  
+};
