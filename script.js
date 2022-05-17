@@ -20,6 +20,7 @@ function musicList(songs, title){
     songs.forEach(song => { 
         const list= document.createElement("tr");
         list.innerHTML += `
+        <img src="icon.svg"/>
         <td class="nameArtist"><a href= "${song.artist.url}">${song.artist.name}</a></td>
         <td><a href="${song.url}" target="_blank">${song.name}</a></td> 
         <td class= "listeners">${song.listeners} Listeners</td>    
@@ -62,6 +63,7 @@ function HipHop (songs, title){
 };
 
 const listReggae= linksLists[5];
+console.log(listReggae, 'listReggae')
 listReggae.onclick= (e)=>{ 
     e.preventDefault(); //Reset el evento anterior
     reggae(music, e.currentTarget.textContent);
@@ -72,12 +74,15 @@ function reggae(songs, title){
 };
 
 /*US 7*/
-const listJazz= linksLists[7];
+const listJazz= linksLists[4];
+/*console.log(listJazz, 'listJazz')*/
 listJazz.onclick= (e)=>{ 
-    e.preventDefault(); //Reset el evento anterior
+e.preventDefault(); //Reset el evento anterior
+   /* console.log(jazz(music, e.currentTarget.textContent))*/
     jazz(music, e.currentTarget.textContent);
 };
 function jazz(songs, title){
-    let list7= songs.filter(song => song.genres.includes("jazz"));
-    musicList(list7, title);  
+    let list4= songs.filter(song => song.genres.includes("jazz"));
+    console.log(list4, "list")
+    musicList(list4, title);  
 };
