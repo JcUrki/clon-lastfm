@@ -21,7 +21,7 @@ function musicList(songs, title){
     songs.forEach(song => { 
         const list= document.createElement("tr");
         list.innerHTML += `
-        <img src="icon.svg"/>
+        <img src="im"/>
         <td class="nameArtist"><a href= "${song.artist.url}">${song.artist.name}</a></td>
         <td><a href="${song.url}" target="_blank">${song.name}</a></td> 
         <td class= "listeners">${song.listeners} Listeners</td>    
@@ -60,10 +60,14 @@ listTop10.onclick= (e)=>{
     top10(music, e.currentTarget.textContent);
 };
 function top10(songs, title){
-
-    
-    let list7= songs;
+    songs.sort((a, b)=> {
+        let listenersA = parseInt(a.listeners);
+        let listenersB = parseInt(b.listeners);
+        return listenersB - listenersA;
+   })
+    let list7= songs.slice(0,10);
     musicList(list7, title);  
+    list7(20);
 };
 
 //L
