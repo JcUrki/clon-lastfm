@@ -52,4 +52,15 @@ function overview(songs, title){
     musicList(list6, title);  
 };
 
+//US 3
+const listTop10 = linksLists[7];
+listTop10.onclick= (e)=>{ 
+    e.preventDefault(); //Reset el evento anterior
+    top10(music, e.currentTarget.textContent);
+};
+function top10(songs, title){
 
+    
+    let list7= songs;
+    musicList(list7, title);  
+};
