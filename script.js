@@ -2,27 +2,109 @@
 const main= document.querySelector("main");
 const listContainer= document.createElement("section");
 const titleList= document.createElement("h3");
+const linksLists= document.querySelectorAll("a");
+main.appendChild(titleList);
 main.appendChild(listContainer);
-listContainer.appendChild(titleList);
+let music;
 
+//U
+fetch("music.json") //Carga en memoria
+.then(res => res.json()) //Estdecifica el formato en que se desea obtener la información, que es igual a hacer un JSON.tdarse()
+.then(data => {
+    musicList(data,"Overview");
+    music= data;
+}) //Mostrar la información obtenida
 
-
-    fetch("music.json") //Carga en memoria
-    .then(res => res.json()) //Estdecifica el formato en que se desea obtener la información, que es igual a hacer un JSON.tdarse()
-    .then(data => musicList(data)) //Mostrar la información obtenida
-
-//const linksLists= document.querySelectorAll("a");
-
-function musicList(songs){
+function musicList(songs, title){
+    listContainer.innerHTML= "";
+    titleList.innerText= title;
     songs.forEach(song => { 
-        const list1= document.createElement("tr");
-        list1.innerHTML += `
+        const list= document.createElement("tr");
+        list.innerHTML += `
         <td class="nameArtist"><a href= "${song.artist.url}">${song.artist.name}</a></td>
         <td><a href="${song.url}" target="_blank">${song.name}</a></td> 
         <td class= "listeners">${song.listeners} Listeners</td>    
         `;
-        listContainer.appendChild(list1);
+        listContainer.appendChild(list);
     });  
 }
-window.onload = musicList();
+//window.onload = ()=> musicList(music);
 
+//US 6
+const listIndie = linksLists[3];
+listIndie.onclick= (e)=>{ 
+    e.preventDefault(); //Reset el evento anterior
+    indie(music, e.currentTarget.textContent);
+};
+function indie(songs, title){
+    let list3= songs.filter(song => song.genres.includes("indie"));
+    musicList(list3, title);  
+};
+
+//US 2
+const listOverview = linksLists[6];
+listOverview.onclick= (e)=>{ 
+    e.preventDefault(); //Reset el evento anterior
+    overview(music, e.currentTarget.textContent);
+};
+function overview(songs, title){
+    let list6= songs;
+    musicList(list6, title);  
+};
+
+//US 3
+const listTop10 = linksLists[7];
+listTop10.onclick= (e)=>{ 
+    e.preventDefault(); //Reset el evento anterior
+    top10(music, e.currentTarget.textContent);
+};
+function top10(songs, title){
+
+    
+    let list7= songs;
+    musicList(list7, title);  
+};
+
+//L
+
+//US 4
+const listRock = linksLists[1];
+listRock.onclick= (e)=>{ 
+    e.preventDefault(); //Reset el evento anterior
+    rock(music, e.currentTarget.textContent);
+};
+function rock(songs, title){
+    let list1= songs.filter(song => song.genres.includes("rock"));
+    musicList(list1, title);  
+};
+
+const listHipHop= linksLists[2];
+listHipHop.onclick= (e)=>{ 
+    e.preventDefault(); //Reset el evento anterior
+    HipHop(music, e.currentTarget.textContent);
+};
+function HipHop (songs, title){
+    let list2= songs.filter(song => song.genres.includes("Hip-Hop"));
+    musicList(list2, title);  
+};
+
+const listReggae= linksLists[5];
+listReggae.onclick= (e)=>{ 
+    e.preventDefault(); //Reset el evento anterior
+    reggae(music, e.currentTarget.textContent);
+};
+function reggae(songs, title){
+    let list5= songs.filter(song => song.genres.includes("reggae"));
+    musicList(list5, title);  
+};
+
+/*US 7*/
+const listJazz= linksLists[7];
+listJazz.onclick= (e)=>{ 
+    e.preventDefault(); //Reset el evento anterior
+    jazz(music, e.currentTarget.textContent);
+};
+function jazz(songs, title){
+    let list7= songs.filter(song => song.genres.includes("jazz"));
+    musicList(list7, title);  
+};

@@ -155,6 +155,10 @@ tr:nth-child(even) {
     background-color: var(--color-secondary);   /*Pares*/
 }
 
+table{
+    counter-reset: td; /*Parametro-nombre*/
+}
+
 tr{
     height: 2rem;
     margin-left: 2em;
@@ -162,6 +166,11 @@ tr{
     display: flex;
     align-items: center;
     justify-content: space-between; 
+    counter-increment: td; /*Donde incrementa*/
+}
+
+.nameArtist::before{
+    content: counter(td)". "; /*Visualización y decoración extra*/
 }
 
 td{
@@ -175,16 +184,5 @@ td{
     margin-right: 1em;
 }
 
-table{
-    counter-reset: td; /*Parametro-nombre*/
-}
-
-tr{
-    counter-increment: td;
-}
-
-.nameArtist::before{
-    content: counter(td)". ";
-}
 /*roboto condensed bold;Sourcepro-Bold*/
 /*colors (43,226,98);(174,43,226)*/
