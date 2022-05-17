@@ -7,7 +7,7 @@ main.appendChild(titleList);
 main.appendChild(listContainer);
 let music;
 
-//U
+//US 1
 fetch("music.json") //Carga en memoria
 .then(res => res.json()) //Estdecifica el formato en que se desea obtener la información, que es igual a hacer un JSON.tdarse()
 .then(data => {
@@ -21,6 +21,7 @@ function musicList(songs, title){
     songs.forEach(song => { 
         const list= document.createElement("tr");
         list.innerHTML += `
+        <img src="icon.svg"/>
         <td class="nameArtist"><a href= "${song.artist.url}">${song.artist.name}</a></td>
         <td><a href="${song.url}" target="_blank">${song.name}</a></td> 
         <td class= "listeners">${song.listeners} Listeners</td>    
@@ -33,7 +34,7 @@ function musicList(songs, title){
 //US 6
 const listIndie = linksLists[3];
 listIndie.onclick= (e)=>{ 
-    e.preventDefault(); //Reset el evento anterior
+    e.preventDefault(); //Cancela el evento anterior
     indie(music, e.currentTarget.textContent);
 };
 function indie(songs, title){
@@ -44,7 +45,7 @@ function indie(songs, title){
 //US 2
 const listOverview = linksLists[6];
 listOverview.onclick= (e)=>{ 
-    e.preventDefault(); //Reset el evento anterior
+    e.preventDefault();
     overview(music, e.currentTarget.textContent);
 };
 function overview(songs, title){
@@ -55,7 +56,7 @@ function overview(songs, title){
 //US 3
 const listTop10 = linksLists[7];
 listTop10.onclick= (e)=>{ 
-    e.preventDefault(); //Reset el evento anterior
+    e.preventDefault();
     top10(music, e.currentTarget.textContent);
 };
 function top10(songs, title){
@@ -66,11 +67,10 @@ function top10(songs, title){
 };
 
 //L
-
 //US 4
 const listRock = linksLists[1];
 listRock.onclick= (e)=>{ 
-    e.preventDefault(); //Reset el evento anterior
+    e.preventDefault();
     rock(music, e.currentTarget.textContent);
 };
 function rock(songs, title){
@@ -78,19 +78,22 @@ function rock(songs, title){
     musicList(list1, title);  
 };
 
+//US 5
 const listHipHop= linksLists[2];
 listHipHop.onclick= (e)=>{ 
-    e.preventDefault(); //Reset el evento anterior
-    HipHop(music, e.currentTarget.textContent);
+    e.preventDefault();
+    hipHop(music, e.currentTarget.textContent);
 };
-function HipHop (songs, title){
+function hipHop (songs, title){
     let list2= songs.filter(song => song.genres.includes("Hip-Hop"));
     musicList(list2, title);  
 };
 
+//US 8
 const listReggae= linksLists[5];
+console.log(listReggae, 'listReggae')
 listReggae.onclick= (e)=>{ 
-    e.preventDefault(); //Reset el evento anterior
+    e.preventDefault();
     reggae(music, e.currentTarget.textContent);
 };
 function reggae(songs, title){
@@ -98,13 +101,13 @@ function reggae(songs, title){
     musicList(list5, title);  
 };
 
-/*US 7*/
-const listJazz= linksLists[7];
+//US 7
+const listJazz= linksLists[4];
 listJazz.onclick= (e)=>{ 
-    e.preventDefault(); //Reset el evento anterior
+    e.preventDefault();
     jazz(music, e.currentTarget.textContent);
 };
 function jazz(songs, title){
-    let list7= songs.filter(song => song.genres.includes("jazz"));
-    musicList(list7, title);  
+    let list4= songs.filter(song => song.genres.includes("jazz"));
+    musicList(list4, title);  
 };
