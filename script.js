@@ -7,6 +7,7 @@ main.appendChild(titleList);
 main.appendChild(listContainer);
 let music;
 
+//U
 fetch("music.json") //Carga en memoria
 .then(res => res.json()) //Estdecifica el formato en que se desea obtener la información, que es igual a hacer un JSON.tdarse()
 .then(data => {
@@ -40,6 +41,32 @@ function indie(songs, title){
     let list3= songs.filter(song => song.genres.includes("indie"));
     musicList(list3, title);  
 };
+
+//US 2
+const listOverview = linksLists[6];
+listOverview.onclick= (e)=>{ 
+    e.preventDefault(); //Reset el evento anterior
+    overview(music, e.currentTarget.textContent);
+};
+function overview(songs, title){
+    let list6= songs;
+    musicList(list6, title);  
+};
+
+//US 3
+const listTop10 = linksLists[7];
+listTop10.onclick= (e)=>{ 
+    e.preventDefault(); //Reset el evento anterior
+    top10(music, e.currentTarget.textContent);
+};
+function top10(songs, title){
+
+    
+    let list7= songs;
+    musicList(list7, title);  
+};
+
+//L
 
 //US 4
 const listRock = linksLists[1];
@@ -86,3 +113,6 @@ function jazz(songs, title){
     console.log(list4, "list")
     musicList(list4, title);  
 };
+    let list7= songs.filter(song => song.genres.includes("jazz"));
+    musicList(list7, title);  
+
