@@ -79,6 +79,7 @@ function rock(songs, title){
     musicList(list1, title);  
 };
 
+/* US 4*/
 const listHipHop= linksLists[2];
 listHipHop.onclick= (e)=>{ 
     e.preventDefault(); //Reset el evento anterior
@@ -89,6 +90,7 @@ function HipHop (songs, title){
     musicList(list2, title);  
 };
 
+/* US 5*/
 const listReggae= linksLists[5];
 console.log(listReggae, 'listReggae')
 listReggae.onclick= (e)=>{ 
@@ -113,6 +115,14 @@ function jazz(songs, title){
     console.log(list4, "list")
     musicList(list4, title);  
 };
-    let list7= songs.filter(song => song.genres.includes("jazz"));
-    musicList(list7, title);  
-
+    
+const listradiohead = linksLists[8];
+listradiohead.onclick=(e)=>{
+    e.preventDefault();
+    radiohead(music, e.currentTarget.textContent);  
+};
+function radiohead(songs, title){
+    let list8= songs.filter(song => song.genres.includes("radiohead"));
+    console.log(list8, "list")
+    musicList(list8, title);  
+};
