@@ -90,23 +90,28 @@ header {
 #genre .genero {
     display: flex;
     justify-content: center;
-    row-gap: 1em;
-    column-gap: 1em;
+    column-gap: 0.5em;
     list-style: none;
     text-align: center;
 }
 
-@media (max-width: 600px) {
+.genero>li>img {
+    width: 7em;
+    height: 7em;
+    border-radius: 2em;
+}
+
+@media (max-width: 700px) {
     #genre *{
       flex-direction: column;
       justify-content: center;
- }
-}
-
-.genero>li>img {
+    }
+    
+    .genero>li>img {
     width: 5em;
     height: 5em;
     border-radius: 2em;
+    }
 }
 
 .genero>li>a {
