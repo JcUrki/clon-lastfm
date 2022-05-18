@@ -21,7 +21,7 @@ function musicList(songs, title){
     songs.forEach(song => { 
         const list= document.createElement("tr");
         list.innerHTML += `
-        <img src="im"/>
+        <img src="Images/icono-play.png"/>
         <td class="nameArtist"><a href= "${song.artist.url}">${song.artist.name}</a></td>
         <td><a href="${song.url}" target="_blank">${song.name}</a></td> 
         <td class= "listeners">${song.listeners} Listeners</td>    
@@ -84,14 +84,14 @@ function rock(songs, title){
 
 //US 5
 const listHipHop= linksLists[2];
-listHipHop.onclick= (e)=>{ 
+listHipHop.onclick= (e)=>{
     e.preventDefault();
     hipHop(music, e.currentTarget.textContent);
 };
-function hipHop (songs, title){
+function hipHop(songs,title){
     let list2= songs.filter(song => song.genres.includes("Hip-Hop"));
-    musicList(list2, title);  
-};
+    musicList(list2,title);
+}
 
 //US 8
 const listReggae= linksLists[5];
@@ -107,7 +107,7 @@ function reggae(songs, title){
 
 //US 7
 const listJazz= linksLists[4];
-listJazz.onclick= (e)=>{ 
+listJazz.onclick= (e)=>{
     e.preventDefault();
     jazz(music, e.currentTarget.textContent);
 };

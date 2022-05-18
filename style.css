@@ -75,7 +75,7 @@ header {
 }
 
 /* 1st Nav by genre (M)*/
-#genre .genero {
+/*#genre .genero {
     display: grid;
     grid-template-rows: repeat(3,5em);
     grid-template-columns: repeat(2,5em);
@@ -84,7 +84,22 @@ header {
     column-gap:1em;
     row-gap: 1em;
 }
+*/
+#genre .genero {
+    display: flex;
+    justify-content: center;
+    row-gap: 1em;
+    column-gap: 1em;
+    list-style: none;
+    text-align: center;
 
+}
+@media (max-width: 600px) {
+    #genre *{
+      flex-direction: column;
+      justify-content: center;
+ }
+  }
 .genero>li>img {
    width: 5em;
    height: 5em;
