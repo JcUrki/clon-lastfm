@@ -9,7 +9,7 @@ let music;
 
 //US 1
 fetch("music.json") //Carga en memoria
-.then(res => res.json()) //Estdecifica el formato en que se desea obtener la información, que es igual a hacer un JSON.tdarse()
+.then(res => res.json()) //Especifica el formato en que se desea obtener la información, que es igual a hacer un JSON.tdarse()
 .then(data => {
     musicList(data,"Overview");
     music= data;
@@ -64,7 +64,7 @@ function top10(songs, title){
         let listenersA = parseInt(a.listeners);
         let listenersB = parseInt(b.listeners);
         return listenersB - listenersA;
-   })
+    })
     let list7= songs.slice(0,10);
     musicList(list7, title);  
     list7(20);
@@ -82,7 +82,6 @@ function rock(songs, title){
     musicList(list1, title);  
 };
 
-/* US 4*/
 //US 5
 const listHipHop= linksLists[2];
 listHipHop.onclick= (e)=>{ 
@@ -94,7 +93,6 @@ function hipHop (songs, title){
     musicList(list2, title);  
 };
 
-/* US 5*/
 //US 8
 const listReggae= linksLists[5];
 console.log(listReggae, 'listReggae')
@@ -117,14 +115,46 @@ function jazz(songs, title){
     let list4= songs.filter(song => song.genres.includes("jazz"));
     musicList(list4, title);  
 };
-    
-const listradiohead = linksLists[8];
-listradiohead.onclick=(e)=>{
+
+//J
+//US 12
+const listBiggest = linksLists[8];
+listBiggest.onclick=(e)=>{
     e.preventDefault();
-    radiohead(music, e.currentTarget.textContent);  
+    biggest(music, e.currentTarget.textContent);  
 };
-function radiohead(songs, title){
-    let list8= songs.filter(song => song.genres.includes("radiohead"));
-    console.log(list8, "list")
-    musicList(list8, title);  
+function biggest(songs, title){
+    // Artists data without repeat
+    let listArtists = [];
+    if(!songs.length){
+        return undefined;
+    } 
+    for(let i=0; i<songs.length; i++){
+        if(listArtists.indexOf(songs[i].artist.name)===-1){
+            listArtists.push(songs[i].artist.name);
+        }
+    }
+
+    listArtists.forEach(artist=>{
+        let filter= songs.filter(song => song.artist.name.includes(artist.name));
+        console.log(filter)
+
+        // Agregar listeners data
+        let listListeners= parseInt(artist.listeners);
+        filter.listeners += listListeners;
+
+        /* 
+        Other option- listListeners
+            let listListeners=filter.reduce((a ,b) => a + parseInt(b.listeners),0)
+            artist.listeners= listListeners;
+        */
+    })
+    let artistOl= listArtists.sort((a, b)=> {
+        let listenersA = parseInt(a.listeners);
+        let listenersB = parseInt(b.listeners);
+        return listenersB - listenersA;
+    });
+    let artist= artistOl[0];
+    let list8= songs.filter(song => song.artist.name.includes(artist));
+    musicList(list8, title);
 };

@@ -124,8 +124,6 @@ header {
    filter: saturate(10%);
 }
 
-
-
 /*2nd Nav by others groups (L)*/
 .menuName {
     text-align:center;
@@ -184,5 +182,6 @@ td{
     margin-right: 1em;
 }
 
-/*roboto condensed bold;Sourcepro-Bold*/
-/*colors (43,226,98);(174,43,226)*/
+h3{
+    margin-left: 1em;
+}
