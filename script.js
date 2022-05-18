@@ -137,8 +137,6 @@ function biggest(songs, title){
         }
     }
 
-   let listListenersArtist= 0;
-
     listArtists.forEach(artist=>{
         let filter= songs.filter(song => song.artist.name.includes(artist.name));
         console.log(filter)
