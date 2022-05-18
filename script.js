@@ -1,6 +1,6 @@
 // J
 const main= document.querySelector("main");
-const listContainer= document.createElement("section");
+const listContainer= document.createElement("table");
 const titleList= document.createElement("h3");
 const linksLists= document.querySelectorAll("a");
 main.appendChild(titleList);
@@ -21,7 +21,7 @@ function musicList(songs, title){
     songs.forEach(song => { 
         const list= document.createElement("tr");
         list.innerHTML += `
-        <img src="">
+        <img class="play" src="Images/icono-play.png"/>
         <td class="nameArtist"><a href= "${song.artist.url}">${song.artist.name}</a></td>
         <td><a href="${song.url}" target="_blank">${song.name}</a></td> 
         <td class= "listeners">${song.listeners} Listeners</td>    
