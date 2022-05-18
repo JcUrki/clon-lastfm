@@ -9,11 +9,11 @@ let music;
 
 //US 1
 fetch("music.json") //Carga en memoria
-.then(res => res.json()) //Especifica el formato en que se desea obtener la información, que es igual a hacer un JSON.tdarse()
+.then(res => res.json()) //Especifica el formusicato en que se desea obtener la informusicación, que es igual a hacer un JSON.tdarse()
 .then(data => {
     musicList(data,"Overview");
     music= data;
-}) //Mostrar la información obtenida
+}) //Mostrar la informusicación obtenida
 
 function musicList(songs, title){
     listContainer.innerHTML= "";
@@ -21,7 +21,7 @@ function musicList(songs, title){
     songs.forEach(song => { 
         const list= document.createElement("tr");
         list.innerHTML += `
-        <img src="Images/icono-play.png"/>
+        <img src="">
         <td class="nameArtist"><a href= "${song.artist.url}">${song.artist.name}</a></td>
         <td><a href="${song.url}" target="_blank">${song.name}</a></td> 
         <td class= "listeners">${song.listeners} Listeners</td>    
@@ -60,14 +60,14 @@ listTop10.onclick= (e)=>{
     top10(music, e.currentTarget.textContent);
 };
 function top10(songs, title){
-    songs.sort((a, b)=> {
+    let list10=[...songs];//Desestructura el array = copia profunda, por lo que no altera la original
+    list10.sort((a, b)=> {
         let listenersA = parseInt(a.listeners);
         let listenersB = parseInt(b.listeners);
         return listenersB - listenersA;
     })
-    let list7= songs.slice(0,10);
+    let list7= list10.slice(0,10);
     musicList(list7, title);  
-    list7(20);
 };
 
 //L
@@ -84,14 +84,14 @@ function rock(songs, title){
 
 //US 5
 const listHipHop= linksLists[2];
-listHipHop.onclick= (e)=>{
+listHipHop.onclick= (e)=>{ 
     e.preventDefault();
     hipHop(music, e.currentTarget.textContent);
 };
-function hipHop(songs,title){
+function hipHop (songs, title){
     let list2= songs.filter(song => song.genres.includes("Hip-Hop"));
-    musicList(list2,title);
-}
+    musicList(list2, title);  
+};
 
 //US 8
 const listReggae= linksLists[5];
@@ -107,7 +107,7 @@ function reggae(songs, title){
 
 //US 7
 const listJazz= linksLists[4];
-listJazz.onclick= (e)=>{
+listJazz.onclick= (e)=>{ 
     e.preventDefault();
     jazz(music, e.currentTarget.textContent);
 };
@@ -126,14 +126,18 @@ listBiggest.onclick=(e)=>{
 function biggest(songs, title){
     // Artists data without repeat
     let listArtists = [];
+    /*
     if(!songs.length){
         return undefined;
     } 
+    */
     for(let i=0; i<songs.length; i++){
         if(listArtists.indexOf(songs[i].artist.name)===-1){
             listArtists.push(songs[i].artist.name);
         }
     }
+
+   let listListenersArtist= 0;
 
     listArtists.forEach(artist=>{
         let filter= songs.filter(song => song.artist.name.includes(artist.name));
