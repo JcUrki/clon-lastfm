@@ -1,12 +1,19 @@
 // J
-const main= document.querySelector("main");
+export const main= document.querySelector("main");
 const listContainer= document.createElement("table");
 const titleList= document.createElement("h3");
 const linksLists= document.querySelectorAll("a");
 main.appendChild(titleList);
 main.appendChild(listContainer);
-let music;
+let music;// script.js
 
+// Filter for genre
+export function getSongsForGenre(songs, genre) {
+    let list = songs.filter(s => s.genres.includes(genre));
+    return list;
+};
+
+//export function musicList(songs,title)
 //US 1
 fetch("music.json") //Carga en memoria
 .then(res => res.json()) //Especifica el formusicato en que se desea obtener la informusicación, que es igual a hacer un JSON.tdarse()
@@ -160,3 +167,6 @@ function biggest(songs, title){
     let list8= songs.filter(song => song.artist.name.includes(artist));
     musicList(list8, title);
 };
+//OUR S
+//Animacion de las imagenes // 
+
