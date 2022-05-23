@@ -160,3 +160,5 @@ function biggest(songs, title){
     let list8= songs.filter(song => song.artist.name.includes(artist));
     musicList(list8, title);
 };
+
+const rows= document.querySelectorAll("tr")
